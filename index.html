@@ -300,7 +300,7 @@
     <!-- Barra de filtros -->
     <div class="flex items-center gap-2.5 overflow-x-auto pb-5">
       <button id="allFiltersBtn" onclick="openFiltersPanel()" class="filter-pill relative flex items-center gap-1.5 px-4 py-2 text-[11px] tracking-wide uppercase flex-shrink-0">
-        All Filters
+        Todos los filtros
         <svg width="11" height="11" viewBox="0 0 24 24" class="icon"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
         <span id="allFiltersCount" class="hidden absolute -top-2 -right-2 w-[16px] h-[16px] rounded-full bg-[var(--ink)] text-white text-[9px] leading-[16px] text-center">0</span>
       </button>
@@ -318,13 +318,13 @@
       <button class="filter-pill quick-filter px-4 py-2 text-[11px] tracking-wide flex-shrink-0" data-quick-type="size" data-quick-value="maquillaje">Maquillaje</button>
       <div class="relative ml-auto flex-shrink-0">
         <button id="sortByBtn" onclick="toggleSortMenu()" class="filter-pill flex items-center gap-1.5 px-4 py-2 text-[11px] tracking-wide uppercase">
-          Sort by
+          Ordenar por
           <svg width="9" height="6" viewBox="0 0 24 16" class="icon"><polyline points="2,2 12,14 22,2"/></svg>
         </button>
         <div id="sortMenu" class="hidden absolute right-0 top-full mt-2 w-56 bg-white border border-[var(--hairline)] shadow-lg z-40">
-          <button onclick="sortProducts('newest')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)]">Newest</button>
-          <button onclick="sortProducts('price-asc')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)] border-t border-[var(--hairline)]">Price: Low to High</button>
-          <button onclick="sortProducts('price-desc')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)] border-t border-[var(--hairline)]">Price: High to Low</button>
+          <button onclick="sortProducts('newest')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)]">Más recientes</button>
+          <button onclick="sortProducts('price-asc')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)] border-t border-[var(--hairline)]">Precio: menor a mayor</button>
+          <button onclick="sortProducts('price-desc')" class="w-full text-left px-4 py-3 text-[12px] tracking-wide hover:bg-[var(--bone)] border-t border-[var(--hairline)]">Precio: mayor a menor</button>
         </div>
       </div>
     </div>
@@ -334,7 +334,7 @@
 <!-- ================= PANEL DE TENDENCIAS ================= -->
 <div id="trendingPanel" class="hidden opacity-0 border-b border-[var(--hairline)] bg-white sticky top-[1px] z-20" style="transition:opacity .5s ease;">
   <div class="max-w-[1440px] mx-auto px-6 md:px-10 py-8">
-    <h3 class="font-display text-[15px] tracking-wide uppercase mb-6">Trending</h3>
+    <h3 class="font-display text-[15px] tracking-wide uppercase mb-6">Tendencias</h3>
     <div id="trendingGrid" class="flex items-start gap-6 overflow-x-auto pb-2"></div>
   </div>
 </div>
@@ -630,13 +630,13 @@
       <p id="pdpAvailability" class="text-[12px] text-[var(--stone)] mt-2 tracking-wide"></p>
 
       <button onclick="addToBag()" class="w-full bg-black text-white text-[12px] font-medium tracking-[0.2em] uppercase py-4 mt-6 hover:bg-[#2a2a28] transition-colors duration-500">
-        Add To Bag
+        Añadir a la bolsa
       </button>
 
       <p id="pdpDelivery" class="text-[12px] text-[var(--stone)] tracking-wide mt-5"></p>
 
       <div class="mt-8">
-        <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">Also available in</p>
+        <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">También disponible en</p>
         <div class="flex gap-3">
           <button class="w-12 h-14 overflow-hidden border border-[var(--hairline)] hover:border-[var(--ink)] transition-colors duration-500">
             <img id="pdpVariant1" src="" alt="Variante 1" class="w-full h-full object-cover">
@@ -648,7 +648,7 @@
       </div>
 
       <div class="bg-[var(--bone)] text-[11px] text-[var(--stone)] tracking-wide leading-relaxed px-5 py-4 mt-10">
-        Free returns for 30 days &nbsp;|&nbsp; We can collect from your home
+        Devoluciones gratis por 30 días &nbsp;|&nbsp; Podemos recogerlo en tu casa
       </div>
     </div>
 
@@ -659,26 +659,26 @@
 
     <div class="border-b border-[var(--hairline)]">
       <button class="accordion-head w-full flex items-center justify-between py-5 text-left" onclick="toggleAccordion(this)">
-        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">The Details</span>
+        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">Detalles</span>
         <svg width="10" height="7" viewBox="0 0 24 16" class="icon accordion-chevron is-open"><polyline points="2,2 12,14 22,2"/></svg>
       </button>
       <div class="accordion-body" style="max-height:1000px;">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pb-8 text-[13px]">
           <div>
-            <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">Highlights</p>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">Características</p>
             <ul class="space-y-2 text-[var(--ink)]">
-              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Red, mesh design</li>
-              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Graphic print</li>
-              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Two long top handles</li>
-              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Main compartment</li>
-              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Internal zip pocket</li>
+              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Diseño en malla color rojo</li>
+              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Estampado gráfico</li>
+              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Dos asas largas superiores</li>
+              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Compartimento principal</li>
+              <li class="flex gap-2"><span class="text-[var(--stone)]">•</span> Bolsillo interno con cierre</li>
             </ul>
-            <p class="text-[var(--stone)] mt-5">Made in Italy</p>
+            <p class="text-[var(--stone)] mt-5">Hecho en Italia</p>
             <p class="text-[var(--stone)] mt-1">SYLV HARMONY ID: 34017376</p>
             <p class="text-[var(--stone)]">Model ID: SH-8842-BG</p>
           </div>
           <div>
-            <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">Composition</p>
+            <p class="text-[11px] tracking-[0.15em] uppercase text-[var(--stone)] mb-3">Composición</p>
             <p class="text-[var(--ink)]">Polyurethane 100%</p>
           </div>
         </div>
@@ -687,27 +687,27 @@
 
     <div class="border-b border-[var(--hairline)]">
       <button class="accordion-head w-full flex items-center justify-between py-5 text-left" onclick="toggleAccordion(this)">
-        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">Size &amp; Fit</span>
+        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">Talla y ajuste</span>
         <svg width="10" height="7" viewBox="0 0 24 16" class="icon accordion-chevron"><polyline points="2,2 12,14 22,2"/></svg>
       </button>
       <div class="accordion-body" style="max-height:0;">
         <div class="pb-8 text-[13px] text-[var(--ink)] space-y-2">
-          <p>Height: 24cm · Width: 34cm · Depth: 14cm</p>
-          <p class="text-[var(--stone)]">This is a one-size item. Fits true to the reference measurements above.</p>
+          <p>Alto: 24cm · Ancho: 34cm · Profundidad: 14cm</p>
+          <p class="text-[var(--stone)]">Este artículo es talla única. Se ajusta a las medidas de referencia indicadas arriba.</p>
         </div>
       </div>
     </div>
 
     <div class="border-b border-[var(--hairline)]">
       <button class="accordion-head w-full flex items-center justify-between py-5 text-left" onclick="toggleAccordion(this)">
-        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">Delivery, Returns &amp; Seller</span>
+        <span class="text-[12px] tracking-[0.15em] uppercase font-medium">Envío, devoluciones y vendedor</span>
         <svg width="10" height="7" viewBox="0 0 24 16" class="icon accordion-chevron"><polyline points="2,2 12,14 22,2"/></svg>
       </button>
       <div class="accordion-body" style="max-height:0;">
         <div class="pb-8 text-[13px] text-[var(--ink)] space-y-2">
-          <p>Free standard delivery on all orders.</p>
-          <p class="text-[var(--stone)]">Free returns within 30 days. We can collect from your home.</p>
-          <p class="text-[var(--stone)]">Sold and shipped by Sylv Harmony.</p>
+          <p>Envío estándar gratis en todos los pedidos.</p>
+          <p class="text-[var(--stone)]">Devoluciones gratis dentro de 30 días. Podemos recogerlo en tu casa.</p>
+          <p class="text-[var(--stone)]">Vendido y enviado por Sylv Harmony.</p>
         </div>
       </div>
     </div>
@@ -716,7 +716,7 @@
 
   <!-- Meet the bestsellers -->
   <section class="mt-16 md:mt-24 pb-24">
-    <h2 class="font-display font-light text-lg tracking-wide mb-8">Meet the bestsellers</h2>
+    <h2 class="font-display font-light text-lg tracking-wide mb-8">Nuestros más vendidos</h2>
 
     <div class="flex md:grid md:grid-cols-5 gap-5 overflow-x-auto pb-2">
 
@@ -1089,7 +1089,7 @@
   
   <!-- Métodos de pago -->
   <div class="max-w-[1440px] mx-auto px-6 md:px-10 pt-10 pb-6">
-    <h3 class="text-[13px] font-semibold text-black tracking-wide mb-4">Payment methods</h3>
+    <h3 class="text-[13px] font-semibold text-black tracking-wide mb-4">Métodos de pago</h3>
     <div class="flex flex-wrap items-center gap-3">
       <!-- AMEX -->
       <div class="w-12 h-8 border border-gray-200 rounded px-1 flex items-center justify-center bg-[#0070d2]">
@@ -1119,56 +1119,56 @@
         
         <!-- Columna 1 -->
         <div>
-          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Customer Service</h4>
+          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Servicio al cliente</h4>
           <ul class="space-y-2 text-[13px] font-light text-neutral-700">
-            <li><a href="#" class="hover:underline">Contact us</a></li>
-            <li><a href="#" class="hover:underline">FAQs</a></li>
-            <li><a href="#" class="hover:underline">Orders and delivery</a></li>
-            <li><a href="#" class="hover:underline">Import restrictions</a></li>
-            <li><a href="#" class="hover:underline">Returns and refunds</a></li>
-            <li><a href="#" class="hover:underline">Payment and pricing</a></li>
-            <li><a href="#" class="hover:underline">Cryptocurrency payments</a></li>
-            <li><a href="#" class="hover:underline">Promotion terms and conditions</a></li>
-            <li><a href="#" class="hover:underline">SYLV HARMONY Customer Promise</a></li>
+            <li><a href="#" class="hover:underline">Contáctanos</a></li>
+            <li><a href="#" class="hover:underline">Preguntas frecuentes</a></li>
+            <li><a href="#" class="hover:underline">Pedidos y entregas</a></li>
+            <li><a href="#" class="hover:underline">Restricciones de importación</a></li>
+            <li><a href="#" class="hover:underline">Devoluciones y reembolsos</a></li>
+            <li><a href="#" class="hover:underline">Pagos y precios</a></li>
+            <li><a href="#" class="hover:underline">Pagos con criptomonedas</a></li>
+            <li><a href="#" class="hover:underline">Términos y condiciones de promociones</a></li>
+            <li><a href="#" class="hover:underline">Promesa al cliente de SYLV HARMONY</a></li>
           </ul>
         </div>
 
         <!-- Columna 2 -->
         <div>
-          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">About SYLV HARMONY</h4>
+          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Sobre SYLV HARMONY</h4>
           <ul class="space-y-2 text-[13px] font-light text-neutral-700">
-            <li><a href="#" class="hover:underline">About us</a></li>
-            <li><a href="#" class="hover:underline">SYLV HARMONY partner boutiques</a></li>
-            <li><a href="#" class="hover:underline">Careers</a></li>
-            <li><a href="#" class="hover:underline">SYLV HARMONY app</a></li>
-            <li><a href="#" class="hover:underline">Modern slavery statement</a></li>
-            <li><a href="#" class="hover:underline">SYLV HARMONY Advertising</a></li>
-            <li><a href="#" class="hover:underline">Sitemap</a></li>
+            <li><a href="#" class="hover:underline">Quiénes somos</a></li>
+            <li><a href="#" class="hover:underline">Boutiques asociadas SYLV HARMONY</a></li>
+            <li><a href="#" class="hover:underline">Trabaja con nosotros</a></li>
+            <li><a href="#" class="hover:underline">App de SYLV HARMONY</a></li>
+            <li><a href="#" class="hover:underline">Declaración contra la esclavitud moderna</a></li>
+            <li><a href="#" class="hover:underline">Publicidad de SYLV HARMONY</a></li>
+            <li><a href="#" class="hover:underline">Mapa del sitio</a></li>
           </ul>
         </div>
 
         <!-- Columna 3 -->
         <div>
-          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Discounts and membership</h4>
+          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Descuentos y membresía</h4>
           <ul class="space-y-2 text-[13px] font-light text-neutral-700">
-            <li><a href="#" class="hover:underline">Affiliate program</a></li>
-            <li><a href="#" class="hover:underline">Refer a friend</a></li>
-            <li><a href="#" class="hover:underline">SYLV HARMONY membership</a></li>
-            <li><a href="#" class="hover:underline">Student discount UNiDAYS</a></li>
-            <li><a href="#" class="hover:underline">Student Beans and Graduates</a></li>
-            <li><a href="#" class="hover:underline">Student and Youth discount</a></li>
+            <li><a href="#" class="hover:underline">Programa de afiliados</a></li>
+            <li><a href="#" class="hover:underline">Refiere a un amigo</a></li>
+            <li><a href="#" class="hover:underline">Membresía SYLV HARMONY</a></li>
+            <li><a href="#" class="hover:underline">Descuento estudiantil UNiDAYS</a></li>
+            <li><a href="#" class="hover:underline">Student Beans y Graduates</a></li>
+            <li><a href="#" class="hover:underline">Descuento para estudiantes y jóvenes</a></li>
           </ul>
         </div>
 
         <!-- Columna 4 -->
         <div>
-          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Content and services</h4>
+          <h4 class="text-[13px] font-semibold tracking-wide uppercase mb-4 text-black">Contenido y servicios</h4>
           <ul class="space-y-2 text-[13px] font-light text-neutral-700 mb-6">
-            <li><a href="#" class="hover:underline">Fashion Feed: the latest style stories</a></li>
+            <li><a href="#" class="hover:underline">Fashion Feed: las últimas tendencias</a></li>
           </ul>
           
           <!-- Bloque Redes Sociales -->
-          <h5 class="text-[13px] font-semibold tracking-wide uppercase mb-3 text-black">Follow us</h5>
+          <h5 class="text-[13px] font-semibold tracking-wide uppercase mb-3 text-black">Síguenos</h5>
           <div class="flex items-center gap-4 text-neutral-700">
             <!-- Instagram -->
             <a href="https://www.instagram.com/sylv.harmony_?igsh=d3o4MnU1ejZ2enJr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-black">
@@ -1186,15 +1186,19 @@
       <!-- Separación y enlaces de políticas finales -->
       <div class="mt-14 pt-8 border-t border-gray-300/40 text-[12px] text-neutral-600 space-y-4">
         <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <a href="#" class="underline hover:text-black">Privacy policy</a>
-          <a href="#" onclick="openTermsModal(); return false;" class="underline hover:text-black">Terms and conditions</a>
-          <a href="#" class="underline hover:text-black">Accessibility</a>
-          <a href="#" class="underline hover:text-black">Protection of Intellectual Property</a>
+          <a href="#" class="underline hover:text-black">Política de privacidad</a>
+          <a href="#" onclick="openTermsModal(); return false;" class="underline hover:text-black">Términos y condiciones</a>
+          <a href="#" class="underline hover:text-black">Accesibilidad</a>
+          <a href="#" class="underline hover:text-black">Protección de propiedad intelectual</a>
         </div>
         
         <div class="text-[11px] font-light leading-relaxed text-neutral-500 space-y-1">
-          <p>'SYLV HARMONY' and the 'SYLV HARMONY' logo are trade marks of SYLV HARMONY CR Limited and are registered in numerous jurisdictions around the world.</p>
-          <p>© Copyright 2026 SYLV HARMONY CR Limited. All rights reserved.</p>
+          <p>'SYLV HARMONY' y el logo de 'SYLV HARMONY' son marcas registradas de SYLV HARMONY CR Limited en numerosas jurisdicciones alrededor del mundo.</p>
+          <p>© Copyright 2026 SYLV HARMONY CR Limited. Todos los derechos reservados.</p>
+        </div>
+
+        <div class="pt-2 text-[11px] font-light text-neutral-400">
+          <p>Sitio creado por Vetric Group</p>
         </div>
       </div>
 
