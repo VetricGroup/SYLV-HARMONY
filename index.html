@@ -890,6 +890,10 @@
       <button onclick="showTrending('bolsos'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Bolsos</button>
       <button onclick="showTrending('fragancias'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Fragancias</button>
       <button onclick="showTrending('vitaminas'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Vitaminas</button>
+      <button onclick="goToCategoryFilter('size','velas'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Velas</button>
+      <button onclick="goToCategoryFilter('size','bodymist'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Body Mist</button>
+      <button onclick="goToCategoryFilter('size','pijamas'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Pijamas</button>
+      <button onclick="goToCategoryFilter('size','maquillaje'); closeMobileMenu();" class="w-full text-left py-3 text-[15px] tracking-wide font-normal border-b border-[var(--hairline)]">Maquillaje</button>
     </div>
 
     <div class="space-y-0.5">
@@ -897,6 +901,8 @@
       <a href="#" onclick="showTrending('bolsos'); closeMobileMenu();" class="block py-2.5 text-[13px] tracking-wide">Bolsos</a>
       <a href="#" onclick="showTrending('fragancias'); closeMobileMenu();" class="block py-2.5 text-[13px] tracking-wide">Fragancias</a>
       <a href="#" onclick="showTrending('vitaminas'); closeMobileMenu();" class="block py-2.5 text-[13px] tracking-wide">Vitaminas</a>
+      <a href="#" onclick="goToCategoryFilter('brand','Victoria&#39;s Secret'); closeMobileMenu();" class="block py-2.5 text-[13px] tracking-wide">Victoria's Secret</a>
+      <a href="#" onclick="goToCategoryFilter('brand','Maybelline'); closeMobileMenu();" class="block py-2.5 text-[13px] tracking-wide">Maybelline</a>
     </div>
   </nav>
 
@@ -2023,6 +2029,17 @@
       const value = btn.dataset.quickValue;
       btn.classList.toggle('is-active', activeFilters[type].has(value));
     });
+  }
+
+  // Aplica un filtro rápido (usado por los enlaces del menú móvil) y baja al catálogo
+  function goToCategoryFilter(type, value){
+    hideTrending();
+    activeFilters = { price: new Set(), brand: new Set(), size: new Set() };
+    activeFilters[type].add(value);
+    syncQuickFilterPills();
+    applyAllFiltersAndSearch();
+    updateFiltersBadge();
+    productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function applyFilters(){
